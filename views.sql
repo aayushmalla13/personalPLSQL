@@ -25,7 +25,7 @@ where ids<21;
 --where upper(cName)='NEPAL';
 
 CREATE OR REPLACE VIEW vw_newdata as
-select  'NEPAL Position:'|| ''||rankFinder('NEPAL') country,'Total:'||ci.totalcases ||' New:'|| nc.newCases cases,'Total Deaths:'||ci.totaldeaths ||' New Deaths:'|| nc.newDeaths deaths from newcovidInfo nc
+select  'NEPAL Position:'|| ''||rankFinder('NEPAL')  || '- total: '||ci.totalcases ||'; today:'|| nc.newCases || '- deaths:'||ci.totaldeaths ||'; today:'|| nc.newDeaths nepal from newcovidInfo nc
 inner join covidInfo ci
 on
 nc.cName = ci.cName
